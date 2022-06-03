@@ -35,6 +35,7 @@ print("wrap around: {}".format(str(np.uint8([50]) - np.uint8([100]))))
 # DESPUES SOLO AGREGAMOS LA IMAGEN PARA OBTENER UN TONO MAS BRILLANTE ???????? ES VERDAD????
 # COMO OBTENGO UNA IMAGEN MAS BRILLANTE??????
 
+# By applying add we make the image brighter.
 # We are building a NumPy array using the image shape as the argument for the number of rows and columns our
 # new numpy array should contain
 M = np.ones(image.shape, dtype = "uint8") * 100
@@ -48,9 +49,11 @@ print(image[0,0])
 added = cv2.add(image, M)
 print(added[0,0])
 cv2.imshow("VALOR ADICIONADO", added)
+
 # SUCEDE LO MISMO SI RESTAMOS 50?????? OBTENEMOS UNA IMAGEN MAS OSCURA
 # COMO FUNCIONA ??????
 
+# When we subtract from an image we get a darker image.
 # The subtraction works just as the addition but instead of adding the value to each position,
 # we are going to subtract that value from each pixel's rgb values
 # Meaning if pixel at position 0,0 had as values (100,100,70) after the cv2.subtract 

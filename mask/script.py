@@ -11,10 +11,13 @@ cv2.imshow("Original", image)
 # It is true, a mask can only take 0s and 255s
 
 # LOS PIXELES CON VALOR 0 SE IGNORAN Y LOS QUE TIENE VALOR 255 SE MANTIENE???
+
+# It is true the pixels with value 0 are ignored and the ones with 255 are mantained
+
 # vamos a construir una mascara rectangular que muestre solo la parte de la imagen que nos interesa
 
 # Creates a NumPy array composed of only 0s and takes the shape of the image
-mask = np.ones(image.shape[:2], dtype="uint8") * 210
+mask = np.zeros(image.shape[:2], dtype="uint8")
 print(mask)
 cv2.rectangle(mask, (66, 5), (239, 85), 255, -1)
 cv2.imshow("MASCARA", mask)
