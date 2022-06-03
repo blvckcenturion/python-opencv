@@ -29,6 +29,7 @@ print("min of 0: {}".format(str(cv2.subtract(np.uint8([50]), np.uint8([100])))))
 #  ES IMPORTANTE TENER EN CUENTA TODOS ESTOS FACTORES CUANDO TRABAJAMOS CON IMAGENES?
 print("wrap around: {}".format(str(np.uint8([200]) + np.uint8([100]))))
 print("wrap around: {}".format(str(np.uint8([50]) - np.uint8([100]))))
+print(np.uint8([200]) + np.uint8([100]))
 
 # aumentemos la intensidad de todos los pixeles en nuestra imagen por 100?
 # ESTO SE LOGRA MEDIANTE LA CONSTRUCCION DE UNA MATRIZ (CON SOLO VALORES 1) Y MULTIPLICAR CADA VALOR POR 100???
@@ -62,6 +63,6 @@ cv2.imshow("VALOR ADICIONADO", added)
 M = np.ones(image.shape, dtype = "uint8") * 50
 print(image[0,0])
 subtracted = cv2.subtract(image, M)
-print(subtract[0,0])
+print(subtracted[0,0])
 cv2.imshow("VALOR RESTADO", subtracted)
 cv2.waitKey(0)

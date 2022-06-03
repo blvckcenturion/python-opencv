@@ -10,10 +10,12 @@ GreenUpper = np.array([25, 255, 30], dtype = "uint8")
 # Black
 BlackLower = np.array([20, 20, 20], dtype = "uint8")
 BlackUpper = np.array([0, 0, 0], dtype = "uint8")
+# White
+WhiteLower = np.array([235, 235, 235], dtype = "uint8")
+WhiteUpper = np.array([255, 255, 255], dtype = "uint8")
 # Red
 RedLower = np.array([67, 100, 0], dtype = "uint8")
 RedUpper = np.array([255, 128, 50], dtype = "uint8")
-
 
 # Computacion Grafica y Robotica
 # define los limites superior e inferior de un color
@@ -33,10 +35,12 @@ while True:
 		break
 	# determinar que pixeles caen dentro de los limites azules
 	# y luego desenfocar la imagen binaria
-	blue = cv2.inRange(frame, blueLower, blueUpper)
+	blue = cv2.inRange(frame, WhiteLower, WhiteUpper)
+
 	# QUE HACE LA FUNCION GAUSSIANBLUR ??????????
     # Applies Gaussian Smoothing on the input source image
     # Gaussian Smoothing help in reducing the noise captured by the camera sensor.
+    
 	blue = cv2.GaussianBlur(blue, (3, 3), 0)
 	# encontrar contornos en la imagen
 	# COMO FUNCIONA LA FUNCION CONTOURS
